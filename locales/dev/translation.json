@@ -5,5 +5,12 @@
     "log_out": "Salir",
     "search": "Buscar",
     "search_placeholder": "Búsqueda no disponible...",
-    "full_screen": "Pantalla completa"
+    "full_screen": "Pantalla completa",
+    "login":{
+        "access_site": "Acceso a la aplicación",
+        "user": "Usuario",
+        "password": "Contraseña",
+        "login": "Entrar",
+        "forgotten": "He olvidado el usuario o contraseña"
+    }
 }
