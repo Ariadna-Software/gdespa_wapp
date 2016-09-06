@@ -1,9 +1,16 @@
 {
-    "company_info": "Ariadna Software S.L.",
-    "app_name": "PROYECTO TEST (Aplicación principal)",
+    "company_info": "GD Enery Services",
+    "app_name": "GDES PANAMA (ES)",
     "collapse_menu": "Mostrar / cerar menú",
-    "log_out": "Salir",
-    "search": "Buscar",
+    "log_out": "Exit",
+    "search": "Search",
     "search_placeholder": "Búsqueda no disponible...",
-    "full_screen": "Pantalla completa"
+    "full_screen": "Pantalla completa",
+    "login":{
+        "access_site": "Acceso a la aplicación",
+        "user": "Usuario",
+        "password": "Contraseña",
+        "login": "Entrar",
+        "forgotten": "He olvidado el usuario o contraseña"
+    }
 }

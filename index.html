@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html>
 	<head>
 		<meta charset="utf-8">
 		<title> GDES PANAMA </title>
@@ -180,16 +180,16 @@
 				<!-- multiple lang dropdown : find all flags in the flags page -->
 				<ul class="header-dropdown-list hidden-xs">
 					<li>
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img src="img/blank.gif" class="flag flag-us" alt="United States"> <span> US</span> <i class="fa fa-angle-down"></i> </a>
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img id="language-flag" src="img/blank.gif" class="flag flag-es" alt="Español (España)"> <span id="language-abrv"> ES</span> <i class="fa fa-angle-down"></i> </a>
 						<ul class="dropdown-menu pull-right">
 							<li >
-								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-us" alt="en-US"> English (US)</a>
+								<a href="javascript:void(0);" onclick="changeLanguage('en');"><img src="img/blank.gif" class="flag flag-us" alt="en-US"> English (US)</a>
 							</li>
 							<li>
-								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-es" alt="es"> Español (España)</a>
+								<a href="javascript:void(0);" onclick="changeLanguage('es');"><img src="img/blank.gif" class="flag flag-es" alt="es"> Español (España)</a>
 							</li>
 							<li>
-								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-pa" alt="es-pa"> Español (Panamá)</a>
+								<a href="javascript:void(0);" onclick="changeLanguage('es-pa');" ><img src="img/blank.gif" class="flag flag-pa" alt="es-pa"> Español (Panamá)</a>
 							</li>
 						</ul>
 					</li>
@@ -304,7 +304,7 @@
 		<div class="page-footer">
 			<div class="row">
 				<div class="col-xs-12 col-sm-6">
-					<span class="txt-color-white">SmartAdmin 1.8.x <span class="hidden-xs"> - Web Application Framework</span> © 2014-2016</span>
+					<span class="txt-color-white">GDES PANAMA <span class="hidden-xs"> - Web Application </span> © 2016</span>
 				</div>
 			</div>
 			<!-- end row -->
@@ -356,12 +356,16 @@
 		<!--[if IE 8]>
 			<h1>Your browser is out of date, please update your browser by going to www.microsoft.com/download</h1>
 		<![endif]-->
-
+		<!-- LOAD CONFIGURATION -->
+		<script src="config.js"></script>
+		
 		<!-- MAIN APP JS FILE -->
 		<script src="js/app.seed.js"></script>
 
 		<!-- INIT CODE -->
 		<script src="js/asw.init.js"></script>
+		<script src="js/asw.common.js"></script>
+
 		<!-- GENERAL CODE AREA -->
 		<script src="js/asw.test.js"></script>
 
