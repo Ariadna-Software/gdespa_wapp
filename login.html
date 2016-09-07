@@ -76,7 +76,7 @@
 				</div>
 				<div class="col-xs-12 col-sm-12 col-md-5 col-lg-4">
 					<div class="well no-padding">
-						<form action="index.html" id="login-form" class="smart-form client-form">
+						<form id="login-form" class="smart-form client-form">
 							<header data-i18n="login.access_site">
 								Acceso al sitio
 							</header>
@@ -84,23 +84,27 @@
 							<fieldset>
 
 								<section>
-									<label class="label"><span data-i18n="login.user">Login</span></label>
+									<label class="label"><span data-i18n="login.user">Usuario</span></label>
 									<label class="input">
                                             <i class="icon-append fa fa-user"></i>
                                             <input type="text" name="login" data-bind="value: login">
-                                            <b class="tooltip tooltip-top-right"><i class="fa fa-user txt-color-teal"></i> Por favor, introduzca su login</b>
+                                            <b class="tooltip tooltip-top-right"><i class="fa fa-user txt-color-teal"></i>
+											 	<span data-i18n="please_user">Por favor, introduzca su login</span>
+											 </b>
                                         </label>
 								</section>
 
 								<section>
-									<label class="label"><span data-i18n="login.password">Login</span></label>
+									<label class="label"><span data-i18n="login.password">Contraseña</span></label>
 									<label class="input">
                                             <i class="icon-append fa fa-lock"></i>
                                             <input type="password" name="password" data-bind="value: password">
-                                            <b class="tooltip tooltip-top-right"><i class="fa fa-lock txt-color-teal"></i> Introduzca su password</b>
+                                            <b class="tooltip tooltip-top-right"><i class="fa fa-lock txt-color-teal"></i> 
+												<span data-i18n="please_password">Introduzca su password</span>
+											</b>
                                         </label>
 									<div class="note">
-										<a href="#"  data-i18n="login.forgotten">I forgot my user or password</a>
+										<a href="#" data-i18n="login.forgotten">He olvidado mi usuario o password</a>
 									</div>
 								</section>
 								<!-- TODO: Do this have sense?
@@ -114,9 +118,9 @@
 							</fieldset>
 							<footer>
 								<span id="mensaje" class="txt-color-red"></span>
-								<button id="btnLogin" type="submit" class="btn btn-primary" data-i18n="login.login">
-                                        Login
-                                    </button>
+								<button id="btnLogin" class="btn btn-primary" data-i18n="login.login">
+									Login
+                                </button>
 							</footer>
 						</form>
 
@@ -156,9 +160,15 @@
 
 	<!-- MAIN APP JS FILE -->
 	<script src="js/app.seed.js"></script>
-	<script src="js/asw.init.js"></script>
-
-
+	<script type="text/javascript">
+		// fix language
+		// i18next
+		i18n.init({
+		}, function (t) {
+			$('.I18N').i18n();
+		});
+	</script>
+	<script src="js/pages/login.js"></script>
 </body>
 
 </html>

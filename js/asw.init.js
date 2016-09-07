@@ -10,7 +10,6 @@ if (!user) {
 
 // i18next
 i18n.init({
-
 }, function (t) {
     $('.I18N').i18n();
 });

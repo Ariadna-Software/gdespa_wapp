@@ -11,6 +11,8 @@
         "user": "Usuario",
         "password": "Contraseña",
         "login": "Entrar",
-        "forgotten": "He olvidado el usuario o contraseña"
+        "forgotten": "He olvidado el usuario o contraseña",
+        "please_login": "Por favor introduzca su usuario",
+        "please_password": "Por favor introduzca su password"
     }
 }
