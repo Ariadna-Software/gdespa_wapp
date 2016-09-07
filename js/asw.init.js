@@ -2,6 +2,11 @@
 asw.init.js:
 Our own app initialitation
 ----------------------------------------------------------------------*/
+// check if there's an user logged in 
+var user = getCookie('gdespa_user');
+if (!user) {
+    window.open('login.html', '_self');
+}
 
 // i18next
 i18n.init({
