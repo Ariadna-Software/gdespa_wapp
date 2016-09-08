@@ -46,7 +46,6 @@ var loginAPI = {
                 // save user and api_key in cookies
                 aswCookies.setCookie('gdespa_user', JSON.stringify(data.user), 1);
                 aswCookies.setCookie('api_key', data.api_key, 1);
-                alert('HALT');
                 window.open('index.html', '_self');
             },
             error: function (xhr, textStatus, errorThrwon) {
