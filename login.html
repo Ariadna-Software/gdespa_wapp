@@ -135,21 +135,23 @@
 
 	<!--================================================== -->
 
-	<!-- Link to Google CDN's jQuery + jQueryUI; fall back to local -->
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-	<script> if (!window.jQuery) { document.write('<script src="js/libs/jquery-2.1.1.min.js"><\/script>');} </script>
+	<!-- jQuery + jQueryUI -->
+	<script src="js/libs/jquery-2.1.1.min.js"></script>
+	<script src="js/libs/jquery-ui-1.10.3.min.js"></script>
 
-	<!--<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
-		<script> if (!window.jQuery.ui) { document.write('<script src="js/libs/jquery-ui-1.10.3.min.js"><\/script>');} </script>-->
 	<!-- JQUERY VALIDATOR -->
 	<script src="js/libs/jquery.validate.min.js"></script>
 
 	<!-- IMPORTANT: APP CONFIG -->
-	<script src="js/app.config.seed.js"></script>
+	<script src="js/app.config.js"></script>
 
 	<!-- TRANSLATIONS -->
 	<script src="js/libs/i18next-1.9.0.js"></script>
 	<script src="locales/validator-languages.js"></script>
+
+	<!-- SOME USEFUL LIBRARIES -->
+	<script src="js/notification/SmartNotification.min.js"></script>
+	<script src="js/libs/sprintf.min.js"></script>
 
 	<!-- JS TOUCH : include this plugin for mobile drag / drop touch events 		
 		<script src="js/plugin/jquery-touch/jquery.ui.touch-punch.min.js"></script> -->
@@ -164,19 +166,26 @@
 		<![endif]-->
 
 	<!-- MAIN APP JS FILE -->
-	<script src="js/app.seed.js"></script>
-	<script type="text/javascript">
-		// fix language
-		// i18next
-		i18n.init({
-		}, function (t) {
-			$('.I18N').i18n();
-		});
-		//
-		var lng = i18n.lng();
-		validator_languages(lng);
-	</script>
+	<script src="js/app.min.js"></script>
+	<script src="config.js"></script>
+	<script src="js/asw.common.js"></script>
 	<script src="js/pages/login.js"></script>
+	<script type="text/javascript">
+		(function ($) {
+			$(document).ready(function () {
+				// fix language
+				// i18next
+				i18n.init({
+				}, function (t) {
+					$('.I18N').i18n();
+				});
+				//
+				var lng = i18n.lng();
+				validator_languages(lng);
+			});
+		})(jQuery);
+	</script>
+
 </body>
 
 </html>

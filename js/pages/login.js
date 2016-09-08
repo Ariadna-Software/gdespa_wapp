@@ -27,9 +27,23 @@ var loginAPI = {
         // obtain user and password
         var login = $('#txtLogin').val();
         var password = $('#txtPassword').val();
-        alert("L: " + login + " P: " + password);
+        var url = sprintf("%s/login?login=%s&password=%s", myconfig.apiUrl, login, password);
         // check login
-
+        $.ajax({
+            type: "GET",
+            url: url,
+            contentType: "application/json",
+            success: function (data, status) {
+                // save user and api_key in cookies
+                aswCookies.setCookie('gdespa_user', JSON.stringify(data.user), 1);
+                aswCookies.setCookie('api_key', data.api_key, 1);
+                alert('HALT');
+                window.open('index.html', '_self');
+            },
+            error: function (xhr, textStatus, errorThrwon) {
+                aswNotif.errAjaxShort(xhr);
+            }
+        })
     }
 };
 

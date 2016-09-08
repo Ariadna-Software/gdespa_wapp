@@ -6,6 +6,12 @@
     "search": "Buscar",
     "search_placeholder": "Búsqueda no disponible...",
     "full_screen": "Pantalla completa",
+    "error":{
+        "general": "Se ha producido un error, ver detalles más abajo.",
+        "ajax_general": "Se ha producido un error general. Posiblemente falla la conexión.",
+        "authorization": "No autorizado, compruebe que el usuario y contraseña son los correctos",
+        "close": "Para cerrar este mensaje haga clic en él."
+    },
     "login":{
         "access_site": "Acceso a la aplicación",
         "user": "Usuario",
