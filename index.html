@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-us">
 
 <head>
 	<meta charset="utf-8">
@@ -15,8 +15,12 @@
 	<link rel="stylesheet" type="text/css" media="screen" href="css/font-awesome.min.css">
 
 	<!-- SmartAdmin Styles : Caution! DO NOT change the order -->
+	<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-production-plugins.min.css">
 	<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-production.min.css">
 	<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-skins.min.css">
+
+	<!-- SmartAdmin RTL Support -->
+	<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-rtl.min.css">
 
 	<link rel="stylesheet" type="text/css" media="screen" href="css/ariadna-style.css">
 
@@ -101,7 +105,6 @@
 			<!-- END LOGO PLACEHOLDER -->
 
 		</div>
-
 		<!-- #PROJECTS: projects dropdown -->
 		<div class="project-context hidden-xs">
 			<span class="asw-project-title" data-i18n="company_info">Company Info</span>
@@ -271,7 +274,7 @@
 	</aside>
 	<!-- END NAVIGATION -->
 
-	<!-- #MAIN PANEL -->
+	<!-- MAIN PANEL -->
 	<div id="main" role="main">
 
 		<!-- RIBBON -->
@@ -284,34 +287,112 @@
 		</div>
 		<!-- END RIBBON -->
 
-		<!-- #MAIN CONTENT -->
-		<div class="row">
-			<div class="col-md-12">
-				<h1 class="txt-color-blueDark">
-					<!-- PAGE HEADER -->
-					<i class="fa-fw fa fa-home"></i> <span data-i18n="menu.home">Inicio</span>
-				</h1>
-			</div>
-		</div>
-		<!-- Widget grid -->
-		<section id="widget-grid" class="">
-			<!-- Widget start -->
-			<article class="col-md-12">
-				<!-- Widget ID (each widget will need unique ID)-->
-				<div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false" data-widget-colorbutton="false" data-widget-deletebutton="false">
-					<header>
-						<span class="widget-icon"> <i class="fa fa-edit"></i> </span>
-						<h2>Mantenimiento administradores </h2>
-					</header>
+
+
+		<!-- MAIN CONTENT -->
+		<div id="content">
+
+			<!-- row -->
+			<div class="row">
+				<div class="col-md-12">
+					<h1 class="txt-color-blueDark">
+						<!-- PAGE HEADER -->
+						<i class="fa-fw fa fa-home"></i> <span data-i18n="menu.home">Inicio</span>
+					</h1>
 				</div>
-			</article>
-		</section>
-		<!-- END #MAIN CONTENT -->
+			</div>
+			<!-- end row -->
+
+			<!--
+					The ID "widget-grid" will start to initialize all widgets below 
+					You do not need to use widgets if you dont want to. Simply remove 
+					the <section></section> and you can use wells or panels instead 
+					-->
+
+			<!-- widget grid -->
+			<section id="widget-grid" class="">
+
+				<!-- row -->
+				<div class="row">
+
+					<!-- NEW WIDGET START -->
+					<article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+						<!-- Widget ID (each widget will need unique ID)-->
+						<div class="jarviswidget" id="wid-id-0">
+							<!-- widget options:
+									usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+									
+									data-widget-colorbutton="false"	
+									data-widget-editbutton="false"
+									data-widget-togglebutton="false"
+									data-widget-deletebutton="false"
+									data-widget-fullscreenbutton="false"
+									data-widget-custombutton="false"
+									data-widget-collapsed="true" 
+									data-widget-sortable="false"
+									
+								-->
+							<header>
+								<span class="widget-icon"> <i class="fa fa-comments"></i> </span>
+								<h2>Widget Title </h2>
+
+							</header>
+
+							<!-- widget div-->
+							<div>
+
+								<!-- widget edit box -->
+								<div class="jarviswidget-editbox">
+									<!-- This area used as dropdown edit box -->
+									<input class="form-control" type="text">
+								</div>
+								<!-- end widget edit box -->
+
+								<!-- widget content -->
+								<div class="widget-body">
+
+									<!-- this is what the user will see -->
+
+								</div>
+								<!-- end widget content -->
+
+							</div>
+							<!-- end widget div -->
+
+						</div>
+						<!-- end widget -->
+
+					</article>
+					<!-- WIDGET END -->
+
+				</div>
+
+				<!-- end row -->
+
+				<!-- row -->
+
+				<div class="row">
+
+					<!-- a blank row to get started -->
+					<div class="col-sm-12">
+						<!-- your contents here -->
+					</div>
+
+				</div>
+
+				<!-- end row -->
+
+			</section>
+			<!-- end widget grid -->
+
+		</div>
+		<!-- END MAIN CONTENT -->
 
 	</div>
-	<!-- END #MAIN PANEL -->
+	<!-- END MAIN PANEL -->
 
-	<!-- #PAGE FOOTER -->
+	<!-- PAGE FOOTER -->
 	<div class="page-footer">
 		<div class="row">
 			<div class="col-xs-12 col-sm-6">
@@ -320,70 +401,131 @@
 		</div>
 		<!-- end row -->
 	</div>
-	<!-- END FOOTER -->
+	<!-- END PAGE FOOTER -->
 
-	<!-- #SHORTCUT AREA : With large tiles (activated via clicking user name tag)
-			 Note: These tiles are completely responsive, you can add as many as you like -->
+	<!-- SHORTCUT AREA : With large tiles (activated via clicking user name tag)
+		Note: These tiles are completely responsive,
+		you can add as many as you like
+		-->
 	<div id="shortcut">
-		<ul>
-			<li>
-				<!-- TODO: Do we want something here?
-					<a href="index.html" class="jarvismetro-tile big-cubes bg-color-blue"> <span class="iconbox"> <i class="fa fa-envelope fa-4x"></i> <span>Mail <span class="label pull-right bg-color-darken">14</span></span> </span> </a>
-					-->
-			</li>
-		</ul>
+
 	</div>
 	<!-- END SHORTCUT AREA -->
 
 	<!--================================================== -->
 
-	<!--================================================== -->
+	<!-- PACE LOADER - turn this on if you want ajax loading to show (caution: uses lots of memory on iDevices)-->
+	<script data-pace-options='{ "restartOnRequestAfter": true }' src="js/plugin/pace/pace.min.js"></script>
 
-	<!-- jQuery + jQueryUI -->
-	<script src="js/libs/jquery-2.1.1.min.js"></script>
-	<script src="js/libs/jquery-ui-1.10.3.min.js"></script>
+	<!-- Link to Google CDN's jQuery + jQueryUI; fall back to local -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script>
+			if (!window.jQuery) {
+				document.write('<script src="js/libs/jquery-2.1.1.min.js"><\/script>');
+			}
+		</script>
 
-	<!-- JQUERY VALIDATOR -->
-	<script src="js/libs/jquery.validate.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+	<script>
+			if (!window.jQuery.ui) {
+				document.write('<script src="js/libs/jquery-ui-1.10.3.min.js"><\/script>');
+			}
+		</script>
 
 	<!-- IMPORTANT: APP CONFIG -->
 	<script src="js/app.config.js"></script>
+
+	<!-- JS TOUCH : include this plugin for mobile drag / drop touch events-->
+	<script src="js/plugin/jquery-touch/jquery.ui.touch-punch.min.js"></script>
+
+	<!-- BOOTSTRAP JS -->
+	<script src="js/bootstrap/bootstrap.min.js"></script>
+
+	<!-- CUSTOM NOTIFICATION -->
+	<script src="js/notification/SmartNotification.min.js"></script>
+
+	<!-- JARVIS WIDGETS -->
+	<script src="js/smartwidgets/jarvis.widget.min.js"></script>
+
+	<!-- EASY PIE CHARTS -->
+	<script src="js/plugin/easy-pie-chart/jquery.easy-pie-chart.min.js"></script>
+
+	<!-- SPARKLINES -->
+	<script src="js/plugin/sparkline/jquery.sparkline.min.js"></script>
+
+	<!-- JQUERY VALIDATE -->
+	<script src="js/plugin/jquery-validate/jquery.validate.min.js"></script>
+
+	<!-- JQUERY MASKED INPUT -->
+	<script src="js/plugin/masked-input/jquery.maskedinput.min.js"></script>
+
+	<!-- JQUERY SELECT2 INPUT -->
+	<script src="js/plugin/select2/select2.min.js"></script>
+
+	<!-- JQUERY UI + Bootstrap Slider -->
+	<script src="js/plugin/bootstrap-slider/bootstrap-slider.min.js"></script>
+
+	<!-- browser msie issue fix -->
+	<script src="js/plugin/msie-fix/jquery.mb.browser.min.js"></script>
+
+	<!-- FastClick: For mobile devices -->
+	<script src="js/plugin/fastclick/fastclick.min.js"></script>
+
+	<!--[if IE 8]>
+
+		<h1>Your browser is out of date, please update your browser by going to www.microsoft.com/download</h1>
+
+		<![endif]-->
+
+
+	<!-- MAIN APP JS FILE -->
+	<script src="js/app.min.js"></script>
+
+	<!-- ENHANCEMENT PLUGINS : NOT A REQUIREMENT -->
+	<!-- Voice command : plugin -->
+	<script src="js/speech/voicecommand.min.js"></script>
+
+	<!-- SmartChat UI : plugin -->
+	<script src="js/smart-chat-ui/smart.chat.ui.min.js"></script>
+	<script src="js/smart-chat-ui/smart.chat.manager.min.js"></script>
+
+	<!-- Utility scripts -->
+	<script src="js/sprintf/sprintf.min.js"></script>
 
 	<!-- TRANSLATIONS -->
 	<script src="js/libs/i18next-1.9.0.js"></script>
 	<script src="locales/validator-languages.js"></script>
 
-	<!-- SOME USEFUL LIBRARIES -->
-	<script src="js/notification/SmartNotification.min.js"></script>
-	<script src="js/libs/sprintf.min.js"></script>
-
-	<!-- BOOTSTRAP JS -->
-	<script src="js/bootstrap/bootstrap.min.js"></script>
-	<!-- JARVIS WIDGETS-->
-	<script src="js/smartwidgets/jarvis.widget.min.js"></script>
-
-
-	<!-- ASW config and apis -->
+	<!-- ARIADNA Scripts -->
 	<script src="config.js"></script>
 	<script src="js/asw.common.js"></script>
-
-	<!--[if IE 8]>
-			
-			<h1>Your browser is out of date, please update your browser by going to www.microsoft.com/download</h1>
-			
-		<![endif]-->
-
-	<!-- MAIN APP JS FILE -->
-	<script src="js/app.min.js"></script>
 	<script src="js/pages/index.js"></script>
+
 	<script type="text/javascript">
-		(function ($) {
-			$(document).ready(function () {
-				pageSetUp();
-				aswInit.initPage();
-			});
-		})(jQuery);
-	</script>
+
+			$(document).ready(function() {
+				 pageSetUp();
+				 aswInit.initPage();
+			})
+		
+		</script>
+
+	<!-- Your GOOGLE ANALYTICS CODE Below -->
+	<script type="text/javascript">
+			var _gaq = _gaq || [];
+				_gaq.push(['_setAccount', 'UA-XXXXXXXX-X']);
+				_gaq.push(['_trackPageview']);
+			
+			(function() {
+				var ga = document.createElement('script');
+				ga.type = 'text/javascript';
+				ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0];
+				s.parentNode.insertBefore(ga, s);
+			})();
+
+		</script>
 
 </body>
 
