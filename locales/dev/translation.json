@@ -20,5 +20,13 @@
         "forgotten": "He olvidado el usuario o contraseña",
         "please_login": "Por favor introduzca su usuario",
         "please_password": "Por favor introduzca su password"
+    },
+    "menu":{
+        "home": "Inicio",
+        "administration": {
+            "main": "Administracion",
+            "user_group": "Grupo usuarios",
+            "user": "Usuarios"
+        } 
     }
 }

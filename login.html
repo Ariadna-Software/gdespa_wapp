@@ -153,11 +153,12 @@
 	<script src="js/notification/SmartNotification.min.js"></script>
 	<script src="js/libs/sprintf.min.js"></script>
 
-	<!-- JS TOUCH : include this plugin for mobile drag / drop touch events 		
-		<script src="js/plugin/jquery-touch/jquery.ui.touch-punch.min.js"></script> -->
-
 	<!-- BOOTSTRAP JS -->
 	<script src="js/bootstrap/bootstrap.min.js"></script>
+
+	<!-- ASW config and apis -->
+	<script src="config.js"></script>
+	<script src="js/asw.common.js"></script>
 
 	<!--[if IE 8]>
 			
@@ -167,21 +168,11 @@
 
 	<!-- MAIN APP JS FILE -->
 	<script src="js/app.min.js"></script>
-	<script src="config.js"></script>
-	<script src="js/asw.common.js"></script>
 	<script src="js/pages/login.js"></script>
 	<script type="text/javascript">
 		(function ($) {
 			$(document).ready(function () {
-				// fix language
-				// i18next
-				i18n.init({
-				}, function (t) {
-					$('.I18N').i18n();
-				});
-				//
-				var lng = i18n.lng();
-				validator_languages(lng);
+				aswInit.initLogin();
 			});
 		})(jQuery);
 	</script>

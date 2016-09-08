@@ -5,6 +5,15 @@
 
 // Internal API for login page
 var loginAPI = {
+    // Init the page
+    init: function () {
+        // avoid sending form 
+        $('#login-form').submit(function () {
+            return false;
+        });
+        // buttons click events 
+        $('#btnLogin').click(loginAPI.loginClick);
+    },
     // Validates form (jquery validate) 
     dataOk: function () {
         $('#login-form').validate({
@@ -47,11 +56,6 @@ var loginAPI = {
     }
 };
 
-// avoid sending form 
-$('#login-form').submit(function () {
-    return false;
-});
-// buttons click events 
-$('#btnLogin').click(loginAPI.loginClick);
+loginAPI.init();
 
 
