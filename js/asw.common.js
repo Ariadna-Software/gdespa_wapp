@@ -19,6 +19,7 @@ var changeLanguage = function (lg) {
     };
     $('#language-flag').attr('class', flag);
     $('#language-abrv').text(lgn);
+    validator_languages(lg);
 };
 
 /*

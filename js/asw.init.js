@@ -23,10 +23,11 @@ switch (lg) {
         flag = "flag flag-us";
         lgn = "EN";
         break;
-    case "es-pa":
+    case "es-PA":
         flag = "flag flag-pa";
         lgn = "PA";
         break;
 };
 $('#language-flag').attr('class', flag);
 $('#language-abrv').text(lgn);
+validator_language(lgn);
