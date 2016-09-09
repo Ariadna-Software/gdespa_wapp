@@ -20,7 +20,7 @@ var aswLanguage = {
                 flag = "flag flag-us";
                 lgn = "EN";
                 break;
-            case "es-pa":
+            case "es-PA":
                 flag = "flag flag-pa";
                 lgn = "PA";
                 break;
