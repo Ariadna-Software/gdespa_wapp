@@ -3,6 +3,17 @@
  * Some apis used in all pages
 ----------------------------------------------------*/
 
+// table managment related
+var responsiveHelper_dt_basic = undefined;
+var responsiveHelper_datatable_fixed_column = undefined;
+var responsiveHelper_datatable_col_reorder = undefined;
+var responsiveHelper_datatable_tabletools = undefined;
+
+var breakpointDefinition = {
+    tablet: 1024,
+    phone: 480
+};
+
 /*
  * aswLanguage
  * api with function language related
@@ -170,5 +181,26 @@ var aswInit = {
         $('#language-flag').attr('class', flag);
         $('#language-abrv').text(lgn);
         validator_languages(lgn);
+    },
+    // initTable
+    // returns a common object to initialize tables
+    initTableOptions: function (table) {
+        var options = {
+            autoWidth: true,
+            preDrawCallback: function () {
+                // Initialize the responsive datatables helper once.
+                if (!responsiveHelper_dt_basic) {
+                    responsiveHelper_dt_basic = new ResponsiveDatatablesHelper($('#' + table), breakpointDefinition);
+                }
+            },
+            rowCallback: function (nRow) {
+                responsiveHelper_dt_basic.createExpandIcon(nRow);
+            },
+            drawCallback: function (oSettings) {
+                responsiveHelper_dt_basic.respond();
+            },
+            language: datatable_languages['es']
+        };
+        return options;
     }
 }
