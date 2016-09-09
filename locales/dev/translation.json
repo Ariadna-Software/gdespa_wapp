@@ -28,5 +28,10 @@
             "user_group": "Grupo usuarios",
             "user": "Usuarios"
         } 
+    },
+    "index":{
+        "welcome": "Bienvenido a la aplicación GDES PANAMA.",
+        "wel1":"Le recordamos que el uso de esta aplicación está sujeto a las normas internas de la empresa y de manera general a los compromisos de confidencialidad expresados en la LOPD",
+        "wel2":"Para poder acceder a las diferentes funcionalidades utilice el menú de la izquierda que le mostrará las opciones a las que tiene acceso"
     }
 }
