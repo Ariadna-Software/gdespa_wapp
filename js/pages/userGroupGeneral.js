@@ -82,11 +82,6 @@ var userGroupGeneralAPI = {
                 userGroupGeneralAPI.getUserGroups();
             },
             error: function (err) {
-                if (err.status == 200) {
-                    // sometimes a delete returns a false error
-                    userGroupGeneralAPI.getUserGroups();
-                    return;
-                }
                 aswNotif.errAjax(err);
                 if (err.status == 401) {
                     window.open('login.html', '_self');
