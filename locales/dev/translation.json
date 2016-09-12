@@ -7,16 +7,16 @@
     "search_placeholder": "Búsqueda no disponible...",
     "full_screen": "Pantalla completa",
     "warning": "ADVERTENCIA",
-    "yes":"Si",
+    "yes": "Si",
     "no": "No",
     "delete_warning": "¿Desea realmente borrar el registro: ",
-    "error":{
+    "error": {
         "general": "Se ha producido un error, ver detalles más abajo.",
         "ajax_general": "Se ha producido un error general. Posiblemente falla la conexión.",
         "authorization": "No autorizado, compruebe que el usuario y contraseña son los correctos",
         "close": "Para cerrar este mensaje haga clic en él."
     },
-    "login":{
+    "login": {
         "access_site": "Acceso a la aplicación",
         "user": "Usuario",
         "password": "Contraseña",
@@ -25,28 +25,40 @@
         "please_login": "Por favor introduzca su usuario",
         "please_password": "Por favor introduzca su password"
     },
-    "menu":{
+    "menu": {
         "home": "Inicio",
         "administration": {
             "main": "Administracion",
             "user_group": "Grupo usuarios",
             "user": "Usuarios"
-        } 
+        }
     },
-    "index":{
+    "index": {
         "welcome": "Bienvenido a la aplicación GDES PANAMA.",
-        "wel1":"Le recordamos que el uso de esta aplicación está sujeto a las normas internas de la empresa y de manera general a los compromisos de confidencialidad expresados en la LOPD",
-        "wel2":"Para poder acceder a las diferentes funcionalidades utilice el menú de la izquierda que le mostrará las opciones a las que tiene acceso"
+        "wel1": "Le recordamos que el uso de esta aplicación está sujeto a las normas internas de la empresa y de manera general a los compromisos de confidencialidad expresados en la LOPD",
+        "wel2": "Para poder acceder a las diferentes funcionalidades utilice el menú de la izquierda que le mostrará las opciones a las que tiene acceso"
     },
-    "userGroupGeneral":{
+    "userGroupGeneral": {
         "title": "Mantenimiento grupos de usuarios",
         "new": "Nuevo grupo"
     },
-    "userGroupDetail":{
+    "userGroupDetail": {
         "title": "Detalle grupo de usuarios",
+        "name": "Nombre",
+        "cancel": "Salir sin guardar",
+        "ok": "Guardar",
+        "group": "Grupo"
+    },
+    "userGeneral": {
+        "title": "Mantenimiento de usuarios",
+        "new": "Nuevo usuario"
+    },
+    "userDetail": {
+        "title": "Detalle de usuario",
         "name": "Nombre",
         "language": "Idioma",
         "cancel": "Salir sin guardar",
-        "ok": "Guardar"
+        "ok": "Guardar",
+        "group": "Grupo"
     }
 }
