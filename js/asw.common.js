@@ -135,6 +135,20 @@ var aswNotif = {
             color: "#C46A69",
             iconSmall: "fa fa-warning shake animated",
         });
+    },
+    deleteRecordQuestion: function (name, fn) {
+        // mount message
+        var msg = sprintf("%s %s ?", i18n.t('delete_warning'), name);
+        var btn1 = sprintf("<a href='javascript:void(0);' onClick='%s' class='btn btn-warning btn-sm'>%s</a>", fn, i18n.t('yes'));
+        var btn2 = sprintf("<a href='javascript:void(0);' class='btn btn-warning btn-sm'>%s</a>", i18n.t('no'));
+        msg += sprintf("<p class='text-align-right'>%s %s</p>", btn1, btn2);
+        $.smallBox({
+            title: i18n.t('warning'),
+            content: msg,
+            color: "#C79121",
+            //timeout: 8000,
+            icon: "fa fa-bell swing animated"
+        });
     }
 }
 
@@ -169,7 +183,7 @@ var aswInit = {
 
         // change language flag and abrv
         var lg = i18n.lng();
-        if (gdespa_lang){
+        if (gdespa_lang) {
             lg = gdespa_lang;
         }
         var flag = "flag flag-es";
