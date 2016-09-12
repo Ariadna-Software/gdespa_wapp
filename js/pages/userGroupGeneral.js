@@ -31,8 +31,8 @@ var userGroupGeneralAPI = {
         }, {
                 data: "id",
                 render: function (data, type, row) {
-                    var bt1 = "<button class='btn btn-circle btn-danger btn-lg' onclick='deleteUserGroup(" + data + ");' title='Eliminar registro'> <i class='fa fa-trash-o fa-fw'></i> </button>";
-                    var bt2 = "<button class='btn btn-circle btn-success btn-lg' onclick='editUserGroup(" + data + ");' title='Editar registro'> <i class='fa fa-edit fa-fw'></i> </button>";
+                    var bt1 = "<button class='btn btn-circle btn-danger btn-lg' onclick='userGroupGeneralAPI.deleteUserGroupMessage(" + data + ");' title='Eliminar registro'> <i class='fa fa-trash-o fa-fw'></i> </button>";
+                    var bt2 = "<button class='btn btn-circle btn-success btn-lg' onclick='userGroupGeneralAPI.editUserGroup(" + data + ");' title='Editar registro'> <i class='fa fa-edit fa-fw'></i> </button>";
                     var html = "<div class='pull-right'>" + bt1 + " " + bt2 + "</div>";
                     return html;
                 }
@@ -41,16 +41,67 @@ var userGroupGeneralAPI = {
     },
     newUserGroup: function () {
         // Its an event handler, return function
-        var mf = function(){
-            
+        var mf = function () {
+            window.open(sprintf('userGroupDetail.html?id=%s', 0), '_self');
         }
         return mf;
     },
     editUserGroup: function (id) {
-
+        window.open(sprintf('userGroupDetail.html?id=%s', id), '_self');
+    },
+    deleteUserGroupMessage: function (id) {
+        var url = sprintf("%s/user_group/%s/?api_key=%s", myconfig.apiUrl, id, api_key);
+        $.ajax({
+            type: "GET",
+            url: url,
+            contentType: "application/json",
+            success: function (data, status) {
+                // mount message
+                var msg = sprintf("%s %s ?", i18n.t('delete_warning'), data[0].name);
+                var btn1 = sprintf("<a href='javascript:void(0);' onClick='userGroupGeneralAPI.deleteUserGroup(%s);' class='btn btn-warning btn-sm'>%s</a>", id, i18n.t('yes'));
+                var btn2 = sprintf("<a href='javascript:void(0);' class='btn btn-warning btn-sm'>%s</a>", i18n.t('no'));
+                msg += sprintf("<p class='text-align-right'>%s %s</p>", btn1, btn2);
+                $.smallBox({
+                    title: i18n.t('warning'),
+                    content: msg,
+                    color: "#C79121",
+                    //timeout: 8000,
+                    icon: "fa fa-bell swing animated"
+                });
+            },
+            error: function (err) {
+                aswNotif.errAjax(err);
+                if (err.status == 401) {
+                    window.open('login.html', '_self');
+                }
+            }
+        });
     },
     deleteUserGroup: function (id) {
-
+        var url = sprintf("%s/user_group/%s/?api_key=%s", myconfig.apiUrl, id, api_key);
+        var data = {
+            id: id
+        };
+        $.ajax({
+            type: "DELETE",
+            url: url,
+            contentType: "application/json",
+            data: JSON.stringify(data),
+            success: function (data, status) {
+                userGroupGeneralAPI.getUserGroups();
+            },
+            error: function (err) {
+                if (err.status == 200) {
+                    // sometimes a delete returns a false error
+                    userGroupGeneralAPI.getUserGroups();
+                    return;
+                }
+                aswNotif.errAjax(err);
+                if (err.status == 401) {
+                    window.open('login.html', '_self');
+                }
+            }
+        });
     },
     // obtain user groups from the API
     getUserGroups: function () {

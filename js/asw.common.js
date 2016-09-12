@@ -104,7 +104,7 @@ var aswNotif = {
         var html = ms + "<hr/>"
         html += sprintf("<div><strong>readyState: </strong>%s</div>", err.readyState);
         if (err.responseText) {
-            html += sprintf("<div><strong>responseText: </strong>%s</div>", err.readyState);
+            html += sprintf("<div><strong>responseText: </strong>%s</div>", err.responseText);
         }
         html += sprintf("<div><strong>status: </strong>%s</div>", err.status);
         html += sprintf("<div><strong>statusText: </strong>%s</div>", err.statusText);
@@ -156,6 +156,7 @@ var aswInit = {
     initPage: function () {
         // check if there's an user logged in 
         var user = aswCookies.getCookie('gdespa_user');
+        var gdespa_lang = aswCookies.getCookie('gdespa_lang');
         if (!user) {
             window.open('login.html', '_self');
         }
@@ -168,6 +169,9 @@ var aswInit = {
 
         // change language flag and abrv
         var lg = i18n.lng();
+        if (gdespa_lang){
+            lg = gdespa_lang;
+        }
         var flag = "flag flag-es";
         var lgn = "ES";
         switch (lg) {
@@ -211,5 +215,24 @@ var aswInit = {
         // change serach, it doesn't matter language
         options.language.search = '<span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>';
         return options;
+    }
+}
+
+/*
+ * aswUtil
+ * Some general utilities
+*/
+
+var aswUtil = {
+    // gup stands from Get Url Parameters
+    gup: function (name) {
+        name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+        var regexS = "[\\?&]" + name + "=([^&#]*)";
+        var regex = new RegExp(regexS);
+        var results = regex.exec(window.location.href);
+        if (results === null)
+            return "";
+        else
+            return results[1];
     }
 }

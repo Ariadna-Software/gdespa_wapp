@@ -6,6 +6,10 @@
     "search": "Buscar",
     "search_placeholder": "Búsqueda no disponible...",
     "full_screen": "Pantalla completa",
+    "warning": "ADVERTENCIA",
+    "yes":"Si",
+    "no": "No",
+    "delete_warning": "¿Desea realmente borrar el registro: ",
     "error":{
         "general": "Se ha producido un error, ver detalles más abajo.",
         "ajax_general": "Se ha producido un error general. Posiblemente falla la conexión.",
@@ -39,6 +43,10 @@
         "new": "Nuevo grupo"
     },
     "userGroupDetail":{
-        
+        "title": "Detalle grupo de usuarios",
+        "name": "Nombre",
+        "language": "Idioma",
+        "cancel": "Salir sin guardar",
+        "ok": "Guardar"
     }
 }
