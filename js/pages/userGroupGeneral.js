@@ -14,6 +14,13 @@ var userGroupGeneralAPI = {
         $('#userGroupGeneral').attr('class', 'active');
         userGroupGeneralAPI.initUserGroupTable();
         userGroupGeneralAPI.getUserGroups();
+        // avoid sending form 
+        $('#userGroupGeneral-form').submit(function () {
+            return false;
+        });
+        // buttons click events 
+        $('#btnNew').click(userGroupGeneralAPI.newUserGroup());
+
     },
     // initializes the table
     initUserGroupTable: function () {
@@ -21,42 +28,49 @@ var userGroupGeneralAPI = {
         options.data = data;
         options.columns = [{
             data: "name"
-            },{
+        }, {
                 data: "id",
                 render: function (data, type, row) {
                     var bt1 = "<button class='btn btn-circle btn-danger btn-lg' onclick='deleteUserGroup(" + data + ");' title='Eliminar registro'> <i class='fa fa-trash-o fa-fw'></i> </button>";
                     var bt2 = "<button class='btn btn-circle btn-success btn-lg' onclick='editUserGroup(" + data + ");' title='Editar registro'> <i class='fa fa-edit fa-fw'></i> </button>";
                     var html = "<div class='pull-right'>" + bt1 + " " + bt2 + "</div>";
                     return html;
-                    }
+                }
             }];
         $('#dt_userGroup').dataTable(options);
     },
-    editUserGroup: function(id){
+    newUserGroup: function () {
+        // Its an event handler, return function
+        var mf = function(){
+            
+        }
+        return mf;
+    },
+    editUserGroup: function (id) {
 
     },
-    deleteUserGroup: function(id){
+    deleteUserGroup: function (id) {
 
     },
     // obtain user groups from the API
-    getUserGroups: function(){
+    getUserGroups: function () {
         var url = sprintf("%s/user_group?api_key=%s", myconfig.apiUrl, api_key);
         $.ajax({
             type: "GET",
             url: url,
             contentType: "application/json",
-            success: function(data, status){
+            success: function (data, status) {
                 userGroupGeneralAPI.loadUserGroupsTable(data);
             },
-            error: function(err){
+            error: function (err) {
                 aswNotif.errAjax(err);
-                if (err.status == 401){
+                if (err.status == 401) {
                     window.open('login.html', '_self');
                 }
             }
         });
     },
-    loadUserGroupsTable: function(data){
+    loadUserGroupsTable: function (data) {
         var dt = $('#dt_userGroup').dataTable();
         dt.fnClearTable();
         dt.fnAddData(data);

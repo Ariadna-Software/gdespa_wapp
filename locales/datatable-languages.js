@@ -17,7 +17,8 @@ var datatable_languages = {
         aria: {
             sortAscending: ": Activar para ordenar la columna de manera ascendente",
             sortDescending: ": Activar para ordenar la columna de manera descendente"
-        }
+        },
+        lengthMenu:" _MENU_ "
     },
     "es-PA":{
         processing: "Procesando...",
@@ -37,7 +38,8 @@ var datatable_languages = {
         aria: {
             sortAscending: ": Activar para ordenar la columna de manera ascendente",
             sortDescending: ": Activar para ordenar la columna de manera descendente"
-        }
+        },
+        lengthMenu: "_MENU_"
     },
     "en":{
         
